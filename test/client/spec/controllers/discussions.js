@@ -13,7 +13,7 @@ describe('Controller: MainCtrl', function () {
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
     $httpBackend.expectGET('/api/discussions')
-      .respond([{'category': 'Test', 'forums': {name:'Test 1', latestPost: "11/01/2014 12:36PM", threadCount:3}}]);
+      .respond([{'category': 'Test', 'forums': {name:'Test 1', latestPost: '11/01/2014 12:36PM', threadCount:3}}]);
     scope = $rootScope.$new();
     DiscussionCtrl = $controller('DiscussionCtrl', {
       $scope: scope
