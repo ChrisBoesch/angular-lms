@@ -8,12 +8,12 @@ angular.module('angularLmsApp', [
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'partials/main',
-        controller: 'MainCtrl'
+      .when('/discussions', {
+        templateUrl: 'partials/discussions',
+        controller: 'DiscussionCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/discussions'
       });
       
     $locationProvider.html5Mode(true);

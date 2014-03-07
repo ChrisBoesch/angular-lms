@@ -5,7 +5,7 @@ describe('Controller: MainCtrl', function () {
   // load the controller's module
   beforeEach(module('angularLmsApp'));
 
-  var MainCtrl,
+  var DiscussionCtrl,
     scope,
     $httpBackend;
 
@@ -15,7 +15,7 @@ describe('Controller: MainCtrl', function () {
     $httpBackend.expectGET('/api/awesomeThings')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    DiscussionCtrl = $controller('DiscussionCtrl', {
       $scope: scope
     });
   }));
