@@ -4,7 +4,7 @@ angular.module('angularLmsApp')
   .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [{
       'title': 'Announcements',
-      'link': '/announcements'
+      'link': '/'
     },{
       'title': 'Overview',
       'link': '/overview'
