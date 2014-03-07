@@ -20,7 +20,7 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
+  it('should attach a list of discussions to the scope', function () {
     expect(scope.discussions).toBeUndefined();
     $httpBackend.flush();
     expect(scope.discussions.length).toBe(1);

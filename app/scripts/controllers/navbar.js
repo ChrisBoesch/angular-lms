@@ -3,7 +3,7 @@
 angular.module('angularLmsApp')
   .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [{
-      'title': 'Announcements',
+      'title': 'Discussions',
       'link': '/'
     },{
       'title': 'Overview',
@@ -12,8 +12,8 @@ angular.module('angularLmsApp')
       'title': 'Sessions',
       'link': '/sessions'
     },{
-      'title': 'Discussions',
-      'link': '/discussions'
+      'title': 'Announcements',
+      'link': '/announcements'
     },{
       'title': 'E-Reserve',
       'link': '/reserve'

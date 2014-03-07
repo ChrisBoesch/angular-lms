@@ -9,15 +9,15 @@ var app = angular.module('angularLmsApp', [
 
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
-    .when('/', {
+    .when('/others', {
       templateUrl: 'partials/announcements'
     })
-    .when('/discussions', {
+    .when('/', {
       templateUrl: 'partials/discussions',
       controller: 'DiscussionCtrl'
     })
     .otherwise({
-      redirectTo: '/discussions'
+      redirectTo: '/'
     });
 
     $locationProvider.html5Mode(true);

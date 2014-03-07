@@ -9,7 +9,7 @@ describe('App Configuration', function(){
       }));
 
     it('should map / to home controller', function() {
-        var route = '/discussions';
+        var route = '/';
         expect($route.routes[route].controller).toEqual('DiscussionCtrl');
         expect($route.routes[route].templateUrl).toEqual( 'partials/discussions');
       });
