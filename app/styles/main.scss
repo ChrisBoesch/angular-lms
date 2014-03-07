@@ -1,0 +1,25 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+
+/* Space out content a bit */
+body {
+    padding-top: 55px;
+}
+
+.flag {
+  color: #0;
+}
+
+.forum-name {
+  width: 60%;
+}
+
+.forum-count {
+  width: 20%;
+}
+
+.forum-latest {
+  width: 20%;
+}
+
