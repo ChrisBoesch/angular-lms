@@ -375,7 +375,7 @@ module.exports = function (grunt) {
         'compass:server'
       ],
       test: [
-        'compass'
+        
       ],
       debug: {
         tasks: [
