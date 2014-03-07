@@ -12,8 +12,8 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/awesomeThings')
-      .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
+    $httpBackend.expectGET('/api/discussions')
+      .respond([{'category': 'Test', 'forums': {name:'Test 1', latestPost: "11/01/2014 12:36PM", threadCount:3}}]);
     scope = $rootScope.$new();
     DiscussionCtrl = $controller('DiscussionCtrl', {
       $scope: scope
@@ -21,8 +21,8 @@ describe('Controller: MainCtrl', function () {
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings).toBeUndefined();
+    expect(scope.discussions).toBeUndefined();
     $httpBackend.flush();
-    expect(scope.awesomeThings.length).toBe(4);
+    expect(scope.discussions.length).toBe(1);
   });
 });
