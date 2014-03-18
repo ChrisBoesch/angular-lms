@@ -279,9 +279,7 @@ module.exports = function (grunt) {
         'copy:styles'
       ],
       test: [
-        'coffee',
-        'compass',
-        'copy:styles'
+        'coffee'
       ],
       dist: [
         'coffee',
