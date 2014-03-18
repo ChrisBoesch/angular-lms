@@ -10,10 +10,10 @@ var app = angular.module('angularLmsApp', [
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
     .when('/others', {
-      templateUrl: 'partials/announcements'
+      templateUrl: 'views/announcements.html'
     })
     .when('/', {
-      templateUrl: 'partials/discussions',
+      templateUrl: 'views/discussions.html',
       controller: 'DiscussionCtrl'
     })
     .otherwise({
