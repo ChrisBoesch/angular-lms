@@ -15,7 +15,8 @@ module.exports = function (grunt) {
     yeoman: {
       // configurable paths
       app: require('./bower.json').appPath || 'app',
-      dist: 'dist'
+      dist: 'dist',
+      gae: 'gae'
     },
     watch: {
       coffee: {
@@ -59,10 +60,9 @@ module.exports = function (grunt) {
     },
     connect: {
       options: {
-        port: 9000,
+        port: 8888,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
-        livereload: 35729
+        hostname: 'localhost'
       },
       livereload: {
         options: {
@@ -85,7 +85,7 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          base: '<%= yeoman.dist %>'
+          base: './'
         }
       }
     },
@@ -97,6 +97,16 @@ module.exports = function (grunt) {
             '.tmp',
             '<%= yeoman.dist %>/*',
             '!<%= yeoman.dist %>/.git*'
+          ]
+        }]
+      },
+      gae: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= yeoman.gae %>/*',
+            '!<%= yeoman.gae %>/.git*'
           ]
         }]
       },
@@ -243,6 +253,30 @@ module.exports = function (grunt) {
     },
     // Put files not handled in other tasks here
     copy: {
+      gae: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.dist %>',
+          dest: '<%= yeoman.gae %>',
+          src: [
+            '*.{html,ico,txt}',
+            '.htaccess',
+            'images/{,*/}*',
+            'scripts/{,*/}*',
+            'styles/{,*/}*',
+            'views/{,*/}*',
+            'fonts/*'
+          ]
+        },{
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.gae %>',
+          src: [
+            'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*'
+          ]
+        }]
+      },
       dist: {
         files: [{
           expand: true,
@@ -252,7 +286,6 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            'bower_components/**/*',
             'images/{,*/}*.{gif,webp}',
             'fonts/*'
           ]
@@ -262,6 +295,13 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>/images',
           src: [
             'generated/*'
+          ]
+        },{
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.dist %>',
+          src: [
+            'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*'
           ]
         }]
       },
@@ -355,8 +395,25 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'rev',
+//    'rev',
     'usemin'
+  ]);
+
+  grunt.registerTask('gae', [
+    'clean:dist',
+    'clean:gae',
+    'useminPrepare',
+    'concurrent:dist',
+    'autoprefixer',
+    'concat',
+    'ngmin',
+    'copy:dist',
+    'cdnify',
+    'cssmin',
+    'uglify',
+    'rev',
+    'usemin',
+    'copy:gae'
   ]);
 
   grunt.registerTask('default', [

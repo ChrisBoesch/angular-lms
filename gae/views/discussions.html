@@ -1,0 +1,24 @@
+<div ng-include="'./views/navbar.html'"></div>
+
+<div class="container">
+    <div class="row" ng-repeat="discussion in discussions">
+        <h3>{{discussion.category}}</h3>
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Latest Post</th>
+                <th>Count</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="forum in discussion.forums">
+                <td class="forum-name"><i class="glyphicon glyphicon-flag flag"></i> <a href="">{{forum.name}}</a></td>
+                <td class="forum-latest">{{forum.latestPost}}</td>
+                <td class="forum-count">{{forum.threadCount}}</td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
