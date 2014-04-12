@@ -11,7 +11,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+                <li ng-repeat="item in menu" ng-class="{active: isActive(item.link), disabled: !item.link}">
                     <a ng-href="{{item.link}}">{{item.title}}</a>
                 </li>
             </ul>

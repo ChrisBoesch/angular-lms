@@ -6,29 +6,29 @@ angular.module('angularLmsApp')
       'title': 'Discussions',
       'link': '/'
     },{
-      'title': 'Overview',
-      'link': '/overview'
+      'title': 'Overview'
+      // 'link': '/overview'
     },{
-      'title': 'Sessions',
-      'link': '/sessions'
+      'title': 'Sessions'
+      // 'link': '/sessions'
     },{
-      'title': 'Announcements',
-      'link': '/announcements'
+      'title': 'Announcements'
+      // 'link': '/announcements'
     },{
-      'title': 'E-Reserve',
-      'link': '/reserve'
+      'title': 'E-Reserve'
+      // 'link': '/reserve'
     },{
-      'title': 'Teams',
-      'link': '/teams'
+      'title': 'Teams'
+      // 'link': '/teams'
     },{
-      'title': 'Resources',
-      'link': '/resources'
+      'title': 'Resources'
+      // 'link': '/resources'
     },{
-      'title': 'VoiceThread',
-      'link': '/voicethread'
+      'title': 'VoiceThread'
+      // 'link': '/voicethread'
     }
     ];
-    
+
     $scope.isActive = function(route) {
       return route === $location.path();
     };
